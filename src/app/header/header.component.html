@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let book of books" (click)="onSelect(book)" [class.selected]="book ==selectedBook">
+    <a routerLink="/books/{{book.seriesNum}}">
+      {{book.seriesNum}}: {{book.title}}
+    </a>
+  </li>
+</ul>
+<app-book-detail [book]="selectedBook" *ngIf="selectedBook"></app-book-detail>
